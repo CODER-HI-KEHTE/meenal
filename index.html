@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#100d16" />
+    <meta
+      name="description"
+      content="A tiny interactive apology from Saurav to Meenal."
+    />
+    <title>A little something for Meenal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="A little something for Meenal">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>something small <span class="brand-soft">by Saurav</span></span>
+      </a>
+      <div class="topbar-note"><span class="status-dot"></span> made just for you</div>
+    </header>
+
+    <main>
+      <section class="screen screen-active" id="quiz-screen" aria-labelledby="quiz-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> PRIVATE LITTLE SIDE QUEST</div>
+            <h1 id="quiz-title">Okay Meenal,<br />let's see how well<br />you know <span class="accent-text">Saurav</span> <span class="look">👀</span></h1>
+            <p class="hero-subtitle">Answer these two questions to unlock something.</p>
+            <div class="hero-footnote"><span aria-hidden="true">✦</span> No pressure. Just us being a little unserious.</div>
+          </div>
+
+          <div class="quiz-card panel">
+            <div class="card-topline">
+              <span class="mini-label">THE VERY IMPORTANT QUIZ</span>
+              <span class="step-count">01 <span>/</span> 02</span>
+            </div>
+            <form id="quiz-form" novalidate>
+              <div class="question-block">
+                <span class="question-number">01</span>
+                <label class="question-title" for="answer-one">What is one person Saurav absolutely adores?</label>
+                <button class="hint-toggle" type="button" aria-expanded="false" aria-controls="hint-one">Need a hint? <span aria-hidden="true">⌄</span></button>
+                <span class="hint" id="hint-one" hidden>Someone from DAVV.</span>
+                <span class="input-wrap">
+                  <input id="answer-one" name="answerOne" type="text" autocomplete="off" placeholder="Your very obvious answer..." aria-describedby="error-one" />
+                  <span class="input-status" aria-hidden="true"></span>
+                </span>
+                <span class="field-error" id="error-one" aria-live="polite"></span>
+              </div>
+
+              <div class="question-block">
+                <span class="question-number">02</span>
+                <label class="question-title" for="answer-two">What's another thing Saurav absolutely loves?</label>
+                <button class="hint-toggle" type="button" aria-expanded="false" aria-controls="hint-two">Need a hint? <span aria-hidden="true">⌄</span></button>
+                <span class="hint" id="hint-two" hidden>It's literally hidden in his Instagram username.</span>
+                <span class="input-wrap">
+                  <input id="answer-two" name="answerTwo" type="text" autocomplete="off" placeholder="Think… deliciously local" aria-describedby="error-two" />
+                  <span class="input-status" aria-hidden="true"></span>
+                </span>
+                <span class="field-error" id="error-two" aria-live="polite"></span>
+              </div>
+
+              <div class="form-actions">
+                <button class="button button-primary button-wide" type="submit">Unlock the thing <span aria-hidden="true">→</span></button>
+                <button class="skip-button" type="button" id="skip-quiz">Skip the quiz, I know you</button>
+              </div>
+              <p class="quiz-note"><span aria-hidden="true">🔒</span> Just a playful quiz — nothing gets saved or sent.</p>
+            </form>
+          </div>
+        </div>
+        <div class="hero-buddy" aria-hidden="true">
+          <div class="buddy-caption">your tiny hype-buddy <span>↙</span></div>
+          <div class="buddy mascot mascot-small">
+            <svg viewBox="0 0 120 124" role="img" aria-label="">
+              <path class="tail" d="M92 88c21 3 19 24 6 25-6 0-8-4-5-8" />
+              <path class="ear" d="M23 45 13 13c-1-4 3-6 6-3l25 21M77 31 98 9c3-3 7 0 5 4L92 48" />
+              <path class="head" d="M20 50c2-20 18-31 41-31s39 11 41 31l4 29c1 24-19 34-46 34S13 103 14 79z" />
+              <path class="inner-ear" d="m23 24 15 13M91 24 80 38" />
+              <ellipse class="eye" cx="42" cy="68" rx="3.3" ry="5" />
+              <ellipse class="eye" cx="78" cy="68" rx="3.3" ry="5" />
+              <path class="nose" d="m57 77 3 2 3-2-3-3z" />
+              <path class="mouth" d="M60 79c-1 6-7 6-9 2m9-2c1 6 7 6 9 2" />
+              <ellipse class="blush" cx="32" cy="79" rx="6" ry="3" />
+              <ellipse class="blush" cx="88" cy="79" rx="6" ry="3" />
+              <path class="flower" d="M91 48c-7-10 5-15 9-7 8-7 16 3 6 8 9 7 0 15-7 7-5 10-15 4-9-5-11 0-10-12 1-10z" />
+              <circle class="flower-center" cx="101" cy="49" r="3" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen center-screen" id="unlock-screen" aria-labelledby="unlock-title" hidden>
+        <div class="celebrate-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="unlock-content">
+          <div class="buddy mascot mascot-large" aria-hidden="true">
+            <svg viewBox="0 0 120 124">
+              <path class="tail" d="M92 88c21 3 19 24 6 25-6 0-8-4-5-8" />
+              <path class="ear" d="M23 45 13 13c-1-4 3-6 6-3l25 21M77 31 98 9c3-3 7 0 5 4L92 48" />
+              <path class="head" d="M20 50c2-20 18-31 41-31s39 11 41 31l4 29c1 24-19 34-46 34S13 103 14 79z" />
+              <path class="inner-ear" d="m23 24 15 13M91 24 80 38" />
+              <ellipse class="eye" cx="42" cy="68" rx="3.3" ry="5" />
+              <ellipse class="eye" cx="78" cy="68" rx="3.3" ry="5" />
+              <path class="nose" d="m57 77 3 2 3-2-3-3z" />
+              <path class="mouth" d="M60 79c-1 6-7 6-9 2m9-2c1 6 7 6 9 2" />
+              <ellipse class="blush" cx="32" cy="79" rx="6" ry="3" />
+              <ellipse class="blush" cx="88" cy="79" rx="6" ry="3" />
+              <path class="flower" d="M91 48c-7-10 5-15 9-7 8-7 16 3 6 8 9 7 0 15-7 7-5 10-15 4-9-5-11 0-10-12 1-10z" />
+              <circle class="flower-center" cx="101" cy="49" r="3" />
+            </svg>
+          </div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> WELL, LOOK AT YOU</div>
+          <h2 id="unlock-title">Okayyy you passed <span class="accent-text">😭</span></h2>
+          <p>Our tiny buddy is now emotionally invested.</p>
+          <button class="button button-primary" type="button" id="story-start">One more thing... <span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <section class="screen story-screen" id="story-screen" aria-labelledby="story-title" hidden>
+        <div class="story-heading">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> A QUICK LITTLE FLASHBACK</div>
+          <h2 id="story-title">Wait... remember how<br />it all <span class="accent-text">started?</span></h2>
+          <p>Okay, technically it started with tech. And then it got a bit less technical.</p>
+        </div>
+
+        <div class="timeline-layout">
+          <div class="timeline-rail" aria-hidden="true">
+            <span class="rail-line"><span class="rail-progress" id="rail-progress"></span></span>
+            <span class="rail-dot active" data-dot="0">01</span>
+            <span class="rail-dot" data-dot="1">02</span>
+            <span class="rail-dot" data-dot="2">03</span>
+            <span class="rail-dot" data-dot="3">04</span>
+          </div>
+          <div class="story-content">
+            <div class="buddy-guide">
+              <div class="buddy mascot mascot-guide" aria-hidden="true">
+                <svg viewBox="0 0 120 124">
+                  <path class="tail" d="M92 88c21 3 19 24 6 25-6 0-8-4-5-8" />
+                  <path class="ear" d="M23 45 13 13c-1-4 3-6 6-3l25 21M77 31 98 9c3-3 7 0 5 4L92 48" />
+                  <path class="head" d="M20 50c2-20 18-31 41-31s39 11 41 31l4 29c1 24-19 34-46 34S13 103 14 79z" />
+                  <path class="inner-ear" d="m23 24 15 13M91 24 80 38" />
+                  <ellipse class="eye" cx="42" cy="68" rx="3.3" ry="5" />
+                  <ellipse class="eye" cx="78" cy="68" rx="3.3" ry="5" />
+                  <path class="nose" d="m57 77 3 2 3-2-3-3z" />
+                  <path class="mouth" d="M60 79c-1 6-7 6-9 2m9-2c1 6 7 6 9 2" />
+                  <ellipse class="blush" cx="32" cy="79" rx="6" ry="3" />
+                  <ellipse class="blush" cx="88" cy="79" rx="6" ry="3" />
+                  <path class="flower" d="M91 48c-7-10 5-15 9-7 8-7 16 3 6 8 9 7 0 15-7 7-5 10-15 4-9-5-11 0-10-12 1-10z" />
+                  <circle class="flower-center" cx="101" cy="49" r="3" />
+                </svg>
+              </div>
+              <span class="guide-bubble" id="guide-bubble">psst, this is the origin story</span>
+            </div>
+            <div class="timeline-cards" id="timeline-cards" aria-live="polite"></div>
+            <div class="timeline-controls">
+              <button class="button button-quiet" id="story-back" type="button" disabled><span aria-hidden="true">←</span> Back</button>
+              <span class="story-counter" id="story-counter">01 <i>/</i> 04</span>
+              <button class="button button-primary" id="story-next" type="button">And then... <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="story-bottom-note"><span aria-hidden="true">✧</span> No dates, no lore fabricated. Just the good bits.</div>
+      </section>
+
+      <section class="screen apology-screen" id="apology-screen" aria-labelledby="apology-title" hidden>
+        <div class="apology-grid">
+          <div class="apology-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> OKAY, REAL TALK</div>
+            <h2 id="apology-title">Okay jokes<br /><span class="accent-text">apart...</span></h2>
+            <p class="apology-message">Meenal, I'm genuinely sorry yaar. I know I didn't reply and I should've at least told you what was going on. I didn't mean to make you feel ignored or upset. Kabhi kabhi I get caught up in things but that doesn't mean I should leave you hanging. You matter to me and I really don't want something as small as this to make you feel otherwise.</p>
+            <p class="apology-signoff">No excuses. I should've communicated better. <span aria-hidden="true">🫶</span></p>
+            <button class="button button-primary" type="button" id="final-start">One last thing <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="apology-art panel" aria-hidden="true">
+            <div class="art-corner">A NOTE FROM YOUR FAVOURITE PERSON<br /><span>(citation needed)</span></div>
+            <div class="speech-bubble">I should've<br />replied sooner.</div>
+            <div class="buddy mascot mascot-large">
+              <svg viewBox="0 0 120 124">
+                <path class="tail" d="M92 88c21 3 19 24 6 25-6 0-8-4-5-8" />
+                <path class="ear" d="M23 45 13 13c-1-4 3-6 6-3l25 21M77 31 98 9c3-3 7 0 5 4L92 48" />
+                <path class="head" d="M20 50c2-20 18-31 41-31s39 11 41 31l4 29c1 24-19 34-46 34S13 103 14 79z" />
+                <path class="inner-ear" d="m23 24 15 13M91 24 80 38" />
+                <ellipse class="eye" cx="42" cy="68" rx="3.3" ry="5" />
+                <ellipse class="eye" cx="78" cy="68" rx="3.3" ry="5" />
+                <path class="nose" d="m57 77 3 2 3-2-3-3z" />
+                <path class="mouth" d="M60 79c-1 6-7 6-9 2m9-2c1 6 7 6 9 2" />
+                <ellipse class="blush" cx="32" cy="79" rx="6" ry="3" />
+                <ellipse class="blush" cx="88" cy="79" rx="6" ry="3" />
+                <path class="flower" d="M91 48c-7-10 5-15 9-7 8-7 16 3 6 8 9 7 0 15-7 7-5 10-15 4-9-5-11 0-10-12 1-10z" />
+                <circle class="flower-center" cx="101" cy="49" r="3" />
+              </svg>
+            </div>
+            <div class="apology-doodle doodle-one">✳</div>
+            <div class="apology-doodle doodle-two">✦</div>
+            <div class="art-caption">a small reminder from a small buddy</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen final-screen" id="final-screen" aria-labelledby="final-title" hidden>
+        <div class="final-sparkles" aria-hidden="true"><span>✦</span><span>✳</span><span>✧</span><span>·</span><span>✦</span></div>
+        <div class="final-content">
+          <div class="buddy-sign-wrap">
+            <div class="buddy mascot mascot-large" aria-hidden="true">
+              <svg viewBox="0 0 120 124">
+                <path class="tail" d="M92 88c21 3 19 24 6 25-6 0-8-4-5-8" />
+                <path class="ear" d="M23 45 13 13c-1-4 3-6 6-3l25 21M77 31 98 9c3-3 7 0 5 4L92 48" />
+                <path class="head" d="M20 50c2-20 18-31 41-31s39 11 41 31l4 29c1 24-19 34-46 34S13 103 14 79z" />
+                <path class="inner-ear" d="m23 24 15 13M91 24 80 38" />
+                <ellipse class="eye" cx="42" cy="68" rx="3.3" ry="5" />
+                <ellipse class="eye" cx="78" cy="68" rx="3.3" ry="5" />
+                <path class="nose" d="m57 77 3 2 3-2-3-3z" />
+                <path class="mouth" d="M60 79c-1 6-7 6-9 2m9-2c1 6 7 6 9 2" />
+                <ellipse class="blush" cx="32" cy="79" rx="6" ry="3" />
+                <ellipse class="blush" cx="88" cy="79" rx="6" ry="3" />
+                <path class="flower" d="M91 48c-7-10 5-15 9-7 8-7 16 3 6 8 9 7 0 15-7 7-5 10-15 4-9-5-11 0-10-12 1-10z" />
+                <circle class="flower-center" cx="101" cy="49" r="3" />
+              </svg>
+            </div>
+            <div class="sorry-sign">i said<br /><b>sorry!</b></div>
+          </div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> THE GRAND FINALE (ISH)</div>
+          <h2 id="final-title">SORRYYYY<br /><span class="accent-text">MEENAL</span> <span class="look">😭</span></h2>
+          <p class="final-joke">Ab gussa thoda kam hua ya abhi bhi court mein case chalega? 😭</p>
+          <button class="button button-primary final-button" type="button" id="forgive-button">Okay fine, I forgive you <span aria-hidden="true">→</span></button>
+          <p class="no-pressure" id="no-pressure">Only if you feel like it. No pressure, ever.</p>
+          <div class="peace-message" id="peace-message" role="status" hidden>
+            <span class="peace-sparkle">✦</span>
+            <strong>YAYYY, peace restored? 🫶</strong>
+            <span class="peace-footnote">The question mark is important 😌</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
